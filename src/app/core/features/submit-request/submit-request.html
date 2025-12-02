@@ -12,8 +12,13 @@
     <input type="text" class="input" placeholder="Phone Number"
            name="phone" [(ngModel)]="model.phone" required />
 
-    <input type="text" class="input" placeholder="District"
-           name="district" [(ngModel)]="model.district" required />
+  <select class="input" name="district" [(ngModel)]="model.district" required>
+  <option value="">-- Select District --</option>
+
+  @for (d of districts; track d) {
+    <option [value]="d">{{ d }}</option>
+  }
+</select>
 
     <input type="text" class="input" placeholder="CurrentAddress"
            name="city" [(ngModel)]="model.city" required />

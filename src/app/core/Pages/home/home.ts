@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
+  currentYear = new Date().getFullYear();
 
   constructor(private router: Router) {}
 
@@ -19,5 +20,9 @@ export class Home {
     this.router.navigate(['/dashboard11']);
   }
 
+  
+  Privacy() {
+    this.router.navigate(['/privacy']);
+  }
 
 }

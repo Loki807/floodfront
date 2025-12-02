@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { SubmitRequest } from './core/features/submit-request/submit-request';
-import { Home } from './Pages/home/home';
+
 import { Dashboard } from './core/features/dashboard/dashboard';
 import { Maindashboard } from './core/features/maindashboard/maindashboard';
+import { Home } from './core/Pages/home/home';
+import { Privacy } from './core/Pages/privacy/privacy';
 
 
 export const routes: Routes = [
@@ -19,7 +21,7 @@ export const routes: Routes = [
   
 
 
-
+{ path: 'privacy', component:Privacy},
 
     // ⭐ FILTER BY DISTRICT (lazy-loaded component)
   {

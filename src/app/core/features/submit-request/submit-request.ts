@@ -32,6 +32,19 @@ urgencyList = [
   { name: "Low" }
 ];
 
+// ⭐ Full District List
+  districts = [
+    "Colombo", "Gampaha", "Kalutara",
+    "Kandy", "Matale", "Nuwara Eliya",
+    "Galle", "Matara", "Hambantota",
+    "Jaffna", "Kilinochchi", "Mannar",
+    "Vavuniya", "Mullaitivu", "Batticaloa",
+    "Ampara", "Trincomalee",
+    "Kurunegala", "Puttalam",
+    "Anuradhapura", "Polonnaruwa",
+    "Badulla", "Monaragala",
+    "Ratnapura", "Kegalle"
+  ];
 
   constructor(private requestService: Request) {}
 
@@ -48,7 +61,7 @@ urgencyList = [
       
       
       error: () => {
-        alert("Failed to submit request.");
+        alert("Failed to submit request.");this.onCategoryChange
       }
     });
   }

@@ -16,4 +16,8 @@ export class Request {
   getAllRequests() {
     return this.http.get<any[]>(this.api);
   }
+
+  updateStatus(id: number, status: string) {
+  return this.http.patch(`${this.api}/${id}/status`, { status });
+}
 }

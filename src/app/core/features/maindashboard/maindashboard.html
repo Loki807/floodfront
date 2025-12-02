@@ -3,9 +3,20 @@
   <h2 class="title">Sri Lanka Flood Relief Dashboard</h2>
   <p class="sub">District-wise Request Summary</p>
 
+   
+
+ <div class="top-row">
+  
+  <!-- ⭐ BACK BUTTON -->
+  <button class="back-btn" (click)="goBack()">Back</button>
+
+  <!-- ⭐ TOTAL REQUESTS CARD -->
   <div class="summary-card">
     Total Requests: {{ requests.length }}
   </div>
+
+</div>
+
 
   <!-- District Summary -->
   <h3 class="section">District Summary</h3>

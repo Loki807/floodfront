@@ -97,3 +97,49 @@ a.call-btn:hover {
     font-size: 22px;
   }
 }
+.action-buttons button {
+  margin: 3px;
+}
+
+.btn-accept {
+  background: #0984e3;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-complete {
+  background: #474d4c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-accept:hover {
+  background: #0652dd;
+}
+
+.btn-complete:hover {
+  background: #019870;
+}
+.back-btn {
+  background-color:#0652dd;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #0652dd;
+}

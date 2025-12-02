@@ -1,0 +1,44 @@
+/* Full page background */
+body, app-privacy {
+  background: #003b6f !important;
+  color: #bcdffb;
+  margin: 0;
+  padding: 40px 10px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* White card box */
+.privacy-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  color: #003b6f;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Title */
+.privacy-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #004b76;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.back-btn:hover {
+  background: #0068a3;
+}

@@ -1,0 +1,155 @@
+/* ---------------------- */
+/* NAVIGATION BAR */
+/* ---------------------- */
+
+.nav {
+  background: linear-gradient(90deg, #003b6f, #005f9e, #003b6f);
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  color: #e6f2ff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px white;
+}
+
+/* ---------------------- */
+/* HERO SECTION */
+/* ---------------------- */
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.glass {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+}
+
+.title {
+  font-size: 38px;
+  color: #003b6f;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 10px 0 30px;
+  font-size: 20px;
+  color: #004a7f;
+}
+
+/* ---------------------- */
+/* BUTTONS */
+/* ---------------------- */
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  border: none;
+  padding: 15px 32px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+/* Blue Gradient (Need Help) */
+.help-btn {
+  background: linear-gradient(135deg, #007bff, #0056d2);
+  color: white;
+}
+
+.help-btn:hover {
+  background: linear-gradient(135deg, #0056d2, #003b99);
+  transform: translateY(-2px);
+}
+
+/* Green + Blue (Volunteer) */
+.volunteer-btn {
+  background: linear-gradient(135deg, #00b36b, #00995c);
+  color: white;
+}
+
+.volunteer-btn:hover {
+  background: linear-gradient(135deg, #00995c, #007742);
+  transform: translateY(-2px);
+}
+
+/* ---------------------- */
+/* FOOTER */
+/* ---------------------- */
+
+.footer {
+  background: #003b6f;
+  color: #bcdffb;
+  padding: 25px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.footer .small {
+  font-size: 13px;
+  color: #8fc4e8;
+}
+
+/* ---------------------- */
+/* MOBILE RESPONSIVE */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none; /* Can also convert to hamburger menu */
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}

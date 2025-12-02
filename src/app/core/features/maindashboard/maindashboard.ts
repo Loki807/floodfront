@@ -76,4 +76,9 @@ export class Maindashboard {
 
   goToUrgency(level: string) {
     this.router.navigate(['/filter/urgency', level]);
-  }}
+  }
+
+    goBack() {
+    this.router.navigate(['/home']);
+  }
+}

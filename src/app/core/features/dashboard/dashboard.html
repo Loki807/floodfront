@@ -13,6 +13,7 @@
         <th>Description</th>
         <th>People</th>
         <th>Urgency</th>
+        <th>Status</th>   <!-- ⭐ added -->
       </tr>
     </thead>
 
@@ -28,15 +29,11 @@
           <td>{{ r.description }}</td>
           <td>{{ r.noOfPeople }}</td>
 
-          <td>
-            <span class="urg"
-              [class.high]="r.urgency === 'High'"
-              [class.medium]="r.urgency === 'Medium'"
-              [class.low]="r.urgency === 'Low'">
+          <td>{{ r.urgency }}</td>
 
-              {{ r.urgency }}
-            </span>
-          </td>
+          <!-- ⭐ RAW STATUS FROM DATABASE -->
+          <td>{{ r.status }}</td>
+
         </tr>
       }
     </tbody>

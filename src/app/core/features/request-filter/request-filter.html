@@ -1,46 +1,42 @@
 <div class="container">
 
   <h2 class="title">{{ activeFilter }} Requests</h2>
+  <button class="back-btn" (click)="goBack()">Back</button>
 
-  @if (filteredRequests.length === 0) {
-    <p>No matching requests found.</p>
-  }
+<table class="req-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>District</th>
+      <th>City</th>
+      <th>Categories</th>
+      <th>Description</th>
+      <th>People</th>
+      <th>Urgency</th>
+      <th>Call</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
 
-  @if (filteredRequests.length > 0) {
-    <table class="req-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>District</th>
-          <th>City</th>
-          <th>Categories</th>
-          <th>Description</th>
-          <th>People</th>
-          <th>Urgency</th>
-          <th>Call</th>
-        </tr>
-      </thead>
+  <tbody>
+    @for (r of filteredRequests; track r.id) {
+      <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.fullName }}</td>
+        <td><a [href]="'tel:' + r.phone">{{ r.phone }}</a></td>
+        <td>{{ r.district }}</td>
+        <td>{{ r.city }}</td>
+        <td>{{ r.categories.join(', ') }}</td>
+        <td>{{ r.description }}</td>
+        <td>{{ r.noOfPeople }}</td>
+        <td>{{ r.urgency }}</td>
+        <td><a [href]="'tel:' + r.phone">Call</a></td>
 
-      <tbody>
-        @for (r of filteredRequests; track r.id) {
-          <tr>
-            <td>{{ r.id }}</td>
-            <td>{{ r.fullName }}</td>
-            <td><a [href]="'tel:' + r.phone">{{ r.phone }}</a></td>
-            <td>{{ r.district }}</td>
-            <td>{{ r.city }}</td>
-            <td>{{ r.categories.join(', ') }}</td>
-            <td>{{ r.description }}</td>
-            <td>{{ r.noOfPeople }}</td>
-            <td>{{ r.urgency }}</td>
-            <td><a [href]="'tel:' + r.phone">Call</a></td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
-
-</div>
-
+        <!-- ⭐ FORMATTED CREATED DATE -->
+        <td>{{ formatDate(r.createdAt) }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

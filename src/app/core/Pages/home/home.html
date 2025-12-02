@@ -1,0 +1,31 @@
+<nav class="nav">
+  <div class="nav-container">
+    <div class="nav-left">
+      <span class="logo">🌊 FloodRelief</span>
+    </div>
+
+    <div class="nav-links">
+      <a routerLink="/home">Home</a>
+        <a (click)=" Privacy()" class="nav-link">Privacy</a>
+      <a (click)="goToVolunteer()" class="nav-link">Volunteer</a>
+
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-box glass">
+    <h1 class="title">Sri Lanka Flood Relief Support</h1>
+    <p class="subtitle">Choose your option</p>
+
+    <div class="btn-group">
+      <button (click)="goToSubmit()" class="btn help-btn">To People</button>
+      <button (click)="goToVolunteer()" class="btn volunteer-btn">To Volunteer</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© {{ currentYear }} FloodRelief | Sri Lanka Emergency Support System</p>
+  <p class="small">Developed with ❤️ to help affected families</p>
+</footer>

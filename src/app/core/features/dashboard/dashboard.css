@@ -91,3 +91,80 @@
 .req-table a:hover {
   text-decoration: underline;
 }
+.status-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+/* ⭐ COLOR STYLES */
+.status-btn.new {
+  background-color: #6c757d;   /* grey */
+}
+
+.status-btn.pending {
+  background-color: #ffc107;   /* yellow */
+  color: black;
+}
+
+.status-btn.active {
+  background-color: #0d6efd;   /* blue */
+}
+
+.status-btn.completed {
+  background-color: #28a745;   /* green */
+}
+/* Completed rows look faded */
+.completed-row {
+  opacity: 0.4;
+  filter: blur(1px);
+  pointer-events: none;  /* disables clicking */
+}
+
+/* Accept button */
+.btn-accept {
+  background: #263d60;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Complete button */
+.btn-complete {
+  background: #198754;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-accept:hover {
+  background: #0652dd;
+}
+
+.btn-complete:hover {
+  background: #019870;
+}
+.back-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #0d6efd;
+}
