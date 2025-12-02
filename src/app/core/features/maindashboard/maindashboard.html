@@ -1,0 +1,44 @@
+<div class="container">
+
+  <h2 class="title">Sri Lanka Flood Relief Dashboard</h2>
+  <p class="sub">District-wise Request Summary</p>
+
+  <div class="summary-card">
+    Total Requests: {{ requests.length }}
+  </div>
+
+  <!-- District Summary -->
+  <h3 class="section">District Summary</h3>
+
+  <div class="district-container-grid">
+    @for (d of districts; track d) {
+      <div class="district-box" (click)="goToDistrict(d)">
+        <h4 class="district-name">{{ d }}</h4>
+        <p class="district-count">{{ districtCounts[d] }} Requests</p>
+      </div>
+    }
+  </div>
+
+  <!-- Urgency Summary -->
+  <h3 class="section">Urgency Summary</h3>
+
+  <div class="urgency-summary-grid">
+
+    <div class="urg-box high" (click)="goToUrgency('High')">
+      <h4>High Urgency</h4>
+      <p>{{ urgencyCounts.High }}</p>
+    </div>
+
+    <div class="urg-box medium" (click)="goToUrgency('Medium')">
+      <h4>Medium Urgency</h4>
+      <p>{{ urgencyCounts.Medium }}</p>
+    </div>
+
+    <div class="urg-box low" (click)="goToUrgency('Low')">
+      <h4>Low Urgency</h4>
+      <p>{{ urgencyCounts.Low }}</p>
+    </div>
+
+  </div>
+
+</div>

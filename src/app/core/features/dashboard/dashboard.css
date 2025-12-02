@@ -1,0 +1,93 @@
+/* ============================
+   CONTAINER + TITLE
+============================ */
+.container {
+  width: 95%;
+  max-width: 1150px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #c1121f;   /* Red shade */
+}
+
+/* ============================
+   TABLE DESIGN
+============================ */
+.req-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.req-table th {
+  background: #c1121f;        /* Dark red */
+  color: white;
+  font-size: 15px;
+  padding: 12px;
+  text-align: left;
+}
+
+.req-table td {
+  background: #ffffff;
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effect */
+.req-table tr:hover td {
+  background: #fff5f5;        /* Light red shade */
+}
+
+/* ============================
+   URGENCY BADGES
+============================ */
+.urg {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 13px;
+}
+
+/* High = Red */
+.high {
+  background: #d90429;
+  color: white;
+}
+
+/* Medium = Orange */
+.medium {
+  background: #f8961e;
+  color: white;
+}
+
+/* Low = Green */
+.low {
+  background: #2a9d8f;
+  color: white;
+}
+
+/* ============================
+   CLICKABLE PHONE LINK
+============================ */
+.req-table a {
+  color: #c1121f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.req-table a:hover {
+  text-decoration: underline;
+}

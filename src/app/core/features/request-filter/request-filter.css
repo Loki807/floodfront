@@ -1,0 +1,99 @@
+/* Main layout */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Page title */
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0a3d62;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* No data message */
+.container p {
+  font-size: 17px;
+  color: #d63031;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ======== TABLE ======== */
+.req-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.req-table th {
+  background-color: #0a3d62;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.req-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Alternating rows */
+.req-table tr:nth-child(even) {
+  background-color: #f5f6fa;
+}
+
+/* Hover effect */
+.req-table tr:hover {
+  background-color: #dfe6e9;
+}
+
+/* ======== URGENCY STYLES ======== */
+.urg-high {
+  color: #e84118;
+  font-weight: bold;
+}
+
+.urg-medium {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.urg-low {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* CALL BUTTON */
+a.call-btn {
+  background: #0984e3;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+a.call-btn:hover {
+  background: #0652dd;
+}
+
+/* Responsive table for mobile */
+@media (max-width: 768px) {
+  .req-table th, .req-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}

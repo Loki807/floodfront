@@ -1,0 +1,52 @@
+<div class="form-container">
+  <h2 class="title">Flood Rescue — Request Help</h2>
+  <p class="subtitle">Please fill the details correctly</p>
+
+  <div class="line"></div>
+
+  <form (ngSubmit)="submit()" #form="ngForm">
+
+    <input type="text" class="input" placeholder="Full Name"
+           name="fullname" [(ngModel)]="model.fullName" required />
+
+    <input type="text" class="input" placeholder="Phone Number"
+           name="phone" [(ngModel)]="model.phone" required />
+
+    <input type="text" class="input" placeholder="District"
+           name="district" [(ngModel)]="model.district" required />
+
+    <input type="text" class="input" placeholder="CurrentAddress"
+           name="city" [(ngModel)]="model.city" required />
+
+<div class="category-grid">
+  <label><input type="checkbox" (change)="onCategoryChange('Food', $event)"> Food</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Clothes', $event)"> Clothes</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Baby Items', $event)"> Baby Items</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Medicine', $event)"> Medicine</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Medical Emergency', $event)"> Medical Emergency</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Shelter', $event)"> Shelter</label>
+  <label><input type="checkbox" (change)="onCategoryChange('Rescue', $event)"> Rescue</label>
+</div>
+
+
+
+    <textarea class="input textarea"
+              placeholder="Description"
+              name="description"
+              [(ngModel)]="model.description"></textarea>
+
+    <input type="number" class="input" placeholder="Number of People"
+           name="people" [(ngModel)]="model.noOfPeople" required />
+
+    <select class="input" name="urgency" [(ngModel)]="model.urgency" required>
+    <option value="">-- Select Urgency --</option>
+
+    <option *ngFor="let item of urgencyList" [value]="item.name">
+      {{ item.name }}
+    </option>
+</select>
+
+
+    <button class="btn-submit">Submit Request</button>
+  </form>
+</div>
