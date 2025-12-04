@@ -1,4 +1,4 @@
-name: Setup GitHub to AWS deploy
+name: deploy
 
 on:
   push:
@@ -11,18 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Angular
-        run: npm run build
+        run: npm run build -- --configuration production
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -32,7 +32,7 @@ jobs:
           aws-region: ap-southeast-2
 
       - name: Sync S3 Bucket
-        run: aws s3 sync ./dist/ s3://flood-rescue --delete
+        run: aws s3 sync ./dist/floodfront/ s3://flood-rescue --delete
 
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id E4OEEO5NPFFXW --paths "/*"
