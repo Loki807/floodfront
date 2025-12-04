@@ -8,8 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node
@@ -20,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Angular
+      - name: Build Angular App
         run: npm run build --if-present
 
       - name: Upload to S3
@@ -32,4 +33,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-southeast-2
-          SOURCE_DIR: dist/flood-rescue/browser
+          SOURCE_DIR: dist/flood-rescue/browser/
