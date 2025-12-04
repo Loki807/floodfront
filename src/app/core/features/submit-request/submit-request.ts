@@ -56,7 +56,7 @@ urgencyList = [
           // Wait 2 seconds then navigate
       setTimeout(() => {
         this.router.navigate(['/home']);
-      }, 2000);
+      }, 1500);
       },
       
       

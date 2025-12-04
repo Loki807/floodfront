@@ -1,62 +1,75 @@
 /* PAGE BACKGROUND */
 body {
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  font-family: "Poppins", sans-serif;
 }
 
 /* MAIN FORM CARD */
 .form-container {
-  max-width: 700px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 35px;
+  width: 90%;
+  max-width: 600px;         /* Perfect desktop width */
+  margin: 35px auto;
+  background: #ffffff;
+  padding: 32px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 /* TITLE */
 .title {
-  font-size: 28px;
   text-align: center;
   color: #064579;
-  margin-bottom: 8px;
+  font-size: 28px;
   font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .subtitle {
   text-align: center;
-  color: #555;
+  color: #444;
   margin-bottom: 20px;
 }
 
-/* LINE */
+/* BLUE SEPARATOR LINE */
 .line {
   width: 100%;
   height: 2px;
-  background: #e3f2fd;
+  background: #cfe3ff;
   margin-bottom: 25px;
 }
 
-/* INPUT + SELECT + TEXTAREA */
-.input {
-  width: 100%;
+/* =============== ALL INPUTS SAME WIDTH =============== */
+.input,
+textarea,
+select {
+  width: 100% !important;     /* FORCE equal width */
+  box-sizing: border-box;
   padding: 14px;
   margin-bottom: 18px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #bfbfbf;
   font-size: 16px;
   transition: 0.2s;
+  background: white;
 }
 
-.input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0,123,255,0.4);
+.input:focus,
+textarea:focus,
+select:focus {
+  border-color: #006adc;
+  box-shadow: 0 0 8px rgba(0,123,255,0.25);
   outline: none;
 }
 
-/* CATEGORY CHECKBOX GRID */
+/* TEXTAREA */
+.textarea {
+  min-height: 120px;
+}
+
+/* CHECKBOX GRID */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ⭐ 2 columns only */
+  grid-template-columns: 1fr 1fr;  /* two equal columns */
   gap: 10px 25px;
   margin-bottom: 20px;
 }
@@ -66,39 +79,36 @@ body {
   color: #333;
 }
 
-/* TEXTAREA */
-.textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* SUBMIT BUTTON */
+/* =============== SUBMIT BUTTON (BLUE) =============== */
 .btn-submit {
   width: 100%;
   padding: 15px;
-  font-size: 18px;
-  background: #006adc;
+  background: #006adc;     /* BLUE */
   color: white;
   border: none;
   border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.2s;
   margin-top: 5px;
-  transition: 0.3s;
 }
 
 .btn-submit:hover {
-  background: #0052a3;
+  background: #0052a3;    /* darker blue */
+  transform: translateY(-2px);
 }
 
-/* RESPONSIVE — MOBILE VIEW */
+/* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
 
   .form-container {
-    padding: 20px;
+    width: 92%;
+    padding: 22px;
   }
 
   .category-grid {
-    grid-template-columns: 1fr; /* ⭐ On mobile → 1 column */
+    grid-template-columns: 1fr; /* single column */
   }
 
   .title {
