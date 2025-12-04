@@ -1,4 +1,5 @@
-name: deploy
+name: Deploy Angular to AWS
+
 on:
   push:
     branches:
@@ -9,20 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Setup Node version
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '18'
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Build Angular
       - name: Build Angular
-        run: npm run build --configuration production
+        run: |
+          npm install -g @angular/cli
+          npx ng build --configuration production
 
+      # Step 5: Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -30,8 +38,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
 
+      # Step 6: Sync S3 Bucket
       - name: Sync S3 Bucket
         run: aws s3 sync ./dist ./s3://flood-rescue --delete
 
+      # Step 7: Invalidate CloudFront Cache
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id E4OEEO5NPFFXW --paths "/*"
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E4OEEO5NPFFXW \
+            --paths "/*"
