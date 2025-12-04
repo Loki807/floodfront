@@ -131,6 +131,39 @@
   font-size: 13px;
   color: #8fc4e8;
 }
+.urgency-summary-home {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px auto;
+}
+
+.u-box {
+  width: 140px;
+  padding: 15px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.u-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.u-box p {
+  font-size: 22px;
+  margin: 5px 0 0;
+}
+
+.high { background: #ff4d4d; }
+.med { background: #f0c419; color:#333; }
+.low { background: #28a745; }
+
 
 /* ---------------------- */
 /* MOBILE RESPONSIVE */
@@ -153,3 +186,13 @@
     font-size: 28px;
   }
 }
+.urgency-tip::after {
+  content: ' ⟶';
+  animation: arrowMove 1s infinite alternate;
+}
+
+@keyframes arrowMove {
+  0% { margin-left: 5px; }
+  100% { margin-left: 15px; }
+}
+

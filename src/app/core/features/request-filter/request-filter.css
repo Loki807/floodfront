@@ -5,6 +5,7 @@
   padding: 20px;
   background: #ffffff;
   border-radius: 10px;
+  overflow-x: auto;          /* ⭐ Mobile scroll support */
 }
 
 /* Page title */
@@ -29,6 +30,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  min-width: 900px;                     /* ⭐ Prevents breaking on small screens */
 }
 
 .req-table th {
@@ -38,6 +40,7 @@
   text-align: left;
   font-size: 14px;
   letter-spacing: 0.5px;
+  white-space: nowrap;                   /* ⭐ Prevents title wrapping on phone */
 }
 
 .req-table td {
@@ -56,7 +59,7 @@
   background-color: #dfe6e9;
 }
 
-/* ======== URGENCY STYLES ======== */
+/* ======== URGENCY COLORS ======== */
 .urg-high {
   color: #e84118;
   font-weight: bold;
@@ -72,7 +75,7 @@
   font-weight: bold;
 }
 
-/* CALL BUTTON */
+/* ========= CALL BUTTON ========= */
 a.call-btn {
   background: #0984e3;
   color: white;
@@ -80,23 +83,14 @@ a.call-btn {
   border-radius: 5px;
   text-decoration: none;
   font-size: 13px;
+  white-space: nowrap;         /* ⭐ Prevents breaking on phone */
 }
 
 a.call-btn:hover {
   background: #0652dd;
 }
 
-/* Responsive table for mobile */
-@media (max-width: 768px) {
-  .req-table th, .req-table td {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  .title {
-    font-size: 22px;
-  }
-}
+/* ====== STATUS BUTTONS ====== */
 .action-buttons button {
   margin: 3px;
 }
@@ -109,6 +103,7 @@ a.call-btn:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .btn-complete {
@@ -119,6 +114,7 @@ a.call-btn:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .btn-accept:hover {
@@ -128,8 +124,10 @@ a.call-btn:hover {
 .btn-complete:hover {
   background: #019870;
 }
+
+/* BACK BUTTON */
 .back-btn {
-  background-color:#0652dd;
+  background-color: #0652dd;
   color: white;
   border: none;
   padding: 8px 18px;
@@ -138,8 +136,72 @@ a.call-btn:hover {
   cursor: pointer;
   margin-bottom: 15px;
   transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .back-btn:hover {
   background-color: #0652dd;
+}
+
+/* ===================================== */
+/* ⭐ FULL MOBILE RESPONSIVE BREAKPOINTS */
+/* ===================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .req-table th, .req-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .req-table {
+    min-width: 750px;   /* ⭐ Makes table scrollable without breaking */
+  }
+
+  .req-table th, .req-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .btn-accept, .btn-complete {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .req-table {
+    min-width: 650px;
+  }
+
+  .btn-accept, .btn-complete, .call-btn {
+    font-size: 11px;
+    padding: 4px 7px;
+  }
 }

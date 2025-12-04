@@ -15,15 +15,47 @@
 
 <section class="hero">
   <div class="hero-box glass">
+
     <h1 class="title">Sri Lanka Flood Relief Support</h1>
     <p class="subtitle">Choose your option</p>
+
 
     <div class="btn-group">
       <button (click)="goToSubmit()" class="btn help-btn">To People</button>
       <button (click)="goToVolunteer()" class="btn volunteer-btn">To Volunteer</button>
     </div>
+  <p class="urgency-tip">Only Voluteer Tap a Boxes to view urgent requests</p>
+
+
+
+    <!-- ⭐ URGENCY SUMMARY INSIDE HERO -->
+  
+    <div class="urgency-summary-home">
+
+      <div class="u-box high" (click)="goToUrgency('High')">
+        <h4>High</h4>
+        <p>{{ urgencyCounts.High }}</p>
+      </div>
+
+      <div class="u-box med" (click)="goToUrgency('Medium')">
+        <h4>Medium</h4>
+        <p>{{ urgencyCounts.Medium }}</p>
+      </div>
+
+      <div class="u-box low" (click)="goToUrgency('Low')">
+        <h4>Low</h4>
+        <p>{{ urgencyCounts.Low }}</p>
+      </div>
+
+    </div>
+
+   
+
   </div>
 </section>
+
+
+
 
 <footer class="footer">
   <p>© {{ currentYear }} FloodRelief | Sri Lanka Emergency Support System</p>
